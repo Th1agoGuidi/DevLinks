@@ -1,0 +1,199 @@
+* { /* codigo pra resetar as box do css */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white; /* Conseguimos criar uma especie de variavel com --NOMEQUALQUER*/
+    --bg-url: url(./assets/bg-mobile.jpg); /* var do background escuro*/
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.05);
+    --social-link-hover: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/MoonStars.svg);
+
+    --border-view: 1px solid red;
+}
+
+.light  {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.01);
+    --social-link-hover: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/Sun.svg);
+}
+
+
+
+body * { /* asterisco seleciona todos os elementos citados (no caso desse é o body */
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+
+body {
+    /*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;  Nao vai repetir a imagem 
+    background-position: top center;  vai centralizar a imagem 
+    background-size: cover;  vai cobrir toda a area visivel/tela 
+    */
+
+    /* Podemos juntar todas as propiedades acima em um só */
+    background: var(--bg-url) no-repeat top center/cover;
+}
+
+/*Pra selecionar um ID do html devemos usar o # */
+#container {
+    /* border: 2px solid red; */
+    width: 360px;
+    margin: auto; /* irá preencher o espaço por igual em todos os lados */
+    /* display: block; /* display block irá me dar toda a LARGURA DE TELA (Caso nao haja um width impedindo */
+    
+    /*
+    margin-top: 56px; Espaçamento do elemento referente ao topo da pagina 
+    margin-right: auto;  Espaçamento do elemento referente a direita da pagina
+    margin-bottom: auto;  Espaçamento do elemento referente ao pé da pagina 
+    margin-left: auto;  Espaçamento do elemento referente a esquerda da pagina
+    */
+    /* abreviação das opções acima, funciona no sentido horario (cima direita baixo esquerda) */
+    margin: 56px auto 0px auto;
+
+    padding: 0 24px;
+}
+
+#profile {
+    /* border: 1px solid aqua; */
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img { /* Irá procurar o valor de um componente (no caso img) dentro da div profile */
+    /* display: block; /* bloqueia a imagem na linha, forçando o restante ir pra baixo */
+    width: 120px;
+    /* margin: auto; */
+}
+
+#profile p {
+    /* border: 1px solid crimson; */
+    font-weight: 600;
+    font-size: 20px; /*não precisa pois navegadores ja vem com 16px de fonte padrão. */
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* Botao de Light/Dark Mode */
+#switch {
+    /* border: var(--border-view); */
+    position: relative; /* Os outros position dentro dessa div serão relativos a essa primeira */
+    width: 64px; /* a box terá o tamanho do botao, e nao a horizontal inteira */
+
+
+    /* margin-top: 4;
+    margin-bottom: 4;
+    margin-left: auto;
+    margin-right: auto; */
+    margin: 4px auto; /* Nesse modo alinhamos o display block que ja vem padrao */
+
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    
+    position: absolute; /* Libera a opção de camadas dos elementos */
+    right: 1; /* vai jogar a box pra direita RELATIVO com o switch, impedindo de ir pro canto da tela */
+    z-index: 1; /*Altera o nivel de camada/sobreposicao do elemento */
+    
+    transform: translateY(-50%); /* jogo 50% acima do topo*/
+    top: 50%; /* volto 50% do topo, centralizando no switch*/
+}
+
+.light #switch button {
+    right: 0; /* Manda o icone de volta pra esquerda */
+}
+
+#switch span {
+    display: block; /*Span tem por padrao display inline e não aceita LARGURA, entao mudamos pra block*/
+    width: 64px;
+    height: 24px;
+    border-radius: 9999px;
+    
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* Links */
+ul {
+    /* border: 1px solid red; */
+    list-style: none;
+
+    display: flex;
+    flex-direction: column; /* As UL serão exibidas em colunas (Uma embaixo da outra) */
+    gap: 16px; /* Espaçamento entre cada coluna/ul */
+
+    padding: 24px 0px;
+}
+
+ul li a {
+    display: flex;
+    justify-content: center; /* Alinha os itens ao centro da tela/site */
+    align-items: center; /* Alinha os itens ao centro da box */
+    padding: 16px 24px;
+    
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px; /* Arredondamento de Bordas */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    
+    text-decoration: none; /* Remove o sublinhado das linhas */
+    font-weight: 500;
+
+    transition: all 0.5s; /* transição quando carrega a pagina*/
+    
+}
+
+/* Pseudo-Selector */
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+    /* padding: 18px; */
+}
+/* Links Sociais */
+#social-links {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0; /* Padding 24 pixels nas laterais e em cima e embaixo 0 */
+    font-size: 24px; /* Tambem serve pra aumentar o tamanho das coisas */   
+}
+
+/* Centralizar os icones na box */
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    
+    transition: background 0.5s;
+    border-radius: 50%;
+}
+
+/* Ao passar o mouse nos icones */
+#social-links a:hover {
+    background: var(--social-link-hover);
+}
+
+/* Rodapé */
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}

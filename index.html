@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projeto Rocketseat</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="container"> <!-- Atalhos pra criar div com id: #nome -->
+            <!-- Foto e Nome -->
+            <div id="profile"> <!--Box contendo Imagem e Arroba do Insta-->
+                <img src="./assets/avatar.png" alt="Foto de Thiago"> <!--Imagem de Perfil-->
+                <p>Thiago Guidi</p> <!--Nome embaixo da Imagem de perfil-->
+            </div>
+
+            <!-- Botao Light/Dark Mode -->
+            <div id="switch" onclick="toggleMode()"> <!--Ao clicar no switch ativa a função-->
+                <button></button>
+                <span></span>
+            </div>
+            <!--Lista Desordenada (Pontinhos invés de numeros) dos links clicáveis. target blank abre o link em uma nova guia.-->
+            <ul>
+                <li>
+                    <a href="#" target="_blank">Acesse meu Portfólio</a> 
+                </li>
+                <li>
+                    <a href="https://github.com/Th1agoGuidi" target="_blank">Acesse meu Github</a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/thiago-guidi-731213229/" target="_blank">Acesse meu LinkedIn</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/guidinsta/" target="_blank">Acesse meu Instagram</a>
+                </li>
+            </ul>
+
+            <!--Icones Sociais-->
+            <div id="social-links">
+                <a href="https://github.com/Th1agoGuidi" target="_blank">
+                    <ion-icon name="logo-github"></ion-icon>
+                </a>
+                <a href="https://www.instagram.com/guidinsta/" target="_blank">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="" target="_blank">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+                <a href="https://www.linkedin.com/in/thiago-guidi-731213229/" target="_blank">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>    
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                Feito com ♥ pela <a href="http://rocketseat.com.br">Rocketseat</a>
+            </footer>
+
+        </div>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
