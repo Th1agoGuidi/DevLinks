@@ -114,10 +114,18 @@ body {
     
     transform: translateY(-50%); /* jogo 50% acima do topo*/
     top: 50%; /* volto 50% do topo, centralizando no switch*/
+    left: 0;
+
+    animation: slide-back 0.4s; /* Não precisa de forward pq o left já é 0 */
+}
+
+#switch button:hover {
+    outline: 8px solid var(--social-link-hover);
 }
 
 .light #switch button {
-    right: 0; /* Manda o icone de volta pra esquerda */
+    /* Puxando a animation que criamos la em baixo */
+    animation: slide-in 0.4s forwards; /* forward mantem as propriedades finais invés de resetar.*/
 }
 
 #switch span {
@@ -211,5 +219,27 @@ footer {
     /* a classe .light ira mudar a var do background para outra imagem */
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+/* animation */
+
+/* Cria uma animação de nome slide-in */
+@keyframes slide-in {
+    /* Que vai De (from) */
+    from {
+        left: 0;
+    }
+    /* Pra (to) */
+    to {
+        left: 50%;
+    }
+}
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
