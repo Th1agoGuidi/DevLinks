@@ -8,6 +8,8 @@
 :root {
     --text-color: white;
     --bg-url: url(./assets/bg-mobile.jpg);
+    --img-border: rgba(255, 255, 255, 0.2);
+    --img-box-shadow: rgba(0, 0, 0, 0.7);
     --stroke-color: rgba(255, 255, 255, 0.5);
     --surface-color: rgba(255, 255, 255, 0.1);
     --surface-color-hover: rgba(0, 0, 0, 0.05);
@@ -19,6 +21,8 @@
 .light  {
     --text-color: black;
     --bg-url: url(./assets/bg-mobile-light.jpg);
+    --img-border: rgba(0, 0, 0, 0.6);
+    --img-box-shadow: rgba(0, 0, 0, 0.5);
     --stroke-color: rgba(0, 0, 0, 0.5);
     --surface-color: rgba(0, 0, 0, 0.05);
     --surface-color-hover: rgba(0, 0, 0, 0.01);
@@ -53,7 +57,21 @@ body {
 
 /* Foto */
 #profile img {
-    width: 125px;
+    width: 150px;
+    animation: profileBorder 0.5s forwards;
+    border: 3px solid var(--img-border);
+    box-shadow: 6px 3px 20px var(--img-box-shadow);
+}
+
+.light #profile img {
+    animation: profileBorder 0.5s forwards;
+    border: 3px solid var(--img-border);
+    box-shadow: 6px 3px 20px var(--img-box-shadow);
+}
+
+#profile img:hover {
+    animation: profileHover 0.5s;
+    cursor: pointer;
 }
 
 /* Nome */
@@ -177,6 +195,8 @@ footer {
 
 
 /* animation */
+
+/* Light/Dark Mode Button*/
 @keyframes slide-in {
     from {
         left: 0;
@@ -186,11 +206,31 @@ footer {
     }
 }
 
+/* Light/Dark Mode Button*/
 @keyframes slide-back {
     from {
         left: 50%;
     }
     to {
         left: 0;
+    }
+}
+
+/* Imagem de Perfil Hover */
+@keyframes profileBorder {
+    from {
+        border-radius: 5%;
+    }
+    to {
+        border-radius: 50%;
+    }
+}
+
+@keyframes profileHover {
+    from {
+        border-radius: 50%;
+    }
+    to {
+        border-radius: 5%;
     }
 }
