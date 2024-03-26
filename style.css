@@ -43,6 +43,7 @@ body {
 
     /* Podemos juntar todas as propiedades acima em um só */
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh; /* vh é Viewport Hight = Toda a altura visivel do documento */
 }
 
 /*Pra selecionar um ID do html devemos usar o # */
@@ -197,4 +198,18 @@ footer {
     padding: 24px 0;
     text-align: center;
     font-size: 14px;
+}
+
+/* media queries (Só funciona se o html tiver viewport */
+
+/* SE a LARGURA minima da tela for >= 700px */
+@media (min-width: 700px) {
+    /* o root do arquivo ira mudar a var do background para outra imagem */
+    :root {
+        --bg-url: url(./assets/bg-desktop.jpg);
+    }
+    /* a classe .light ira mudar a var do background para outra imagem */
+    .light {
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
 }
