@@ -48,7 +48,8 @@ body {
 /*Pra selecionar um ID do html devemos usar o # */
 #container {
     /* border: 2px solid red; */
-    width: 360px;
+    width: 100%; /* Será 100% da tela*/
+    max-width: 588px; /* Tamanho maximo do container*/
     margin: auto; /* irá preencher o espaço por igual em todos os lados */
     /* display: block; /* display block irá me dar toda a LARGURA DE TELA (Caso nao haja um width impedindo */
     
