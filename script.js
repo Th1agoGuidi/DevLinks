@@ -12,7 +12,7 @@ function toggleMode() {
         img.setAttribute('alt', "Foto de Thiago com óculos escuro (O Brilho está muito forte)");
     }
     else {
-        img.setAttribute('src', './assets/avatar.jpg');
+        img.setAttribute('src', 'https://github.com/th1agoguidi.png');
         img.setAttribute('alt', "Foto de Thiago");
     }
 }
